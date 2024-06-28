@@ -1,0 +1,44 @@
+:root:has(.mode:checked) .dark {
+  display: none;
+}
+:root:has(.mode:checked) .light {
+  display: block;
+}
+
+:root:has(.mode:checked) {
+  --primary-font-color: #fff;
+  --secondary-font-color: #c17e1f;
+  --secondary-font-color-hover: #de8c23;
+  ---tertiary-color: #9f9f9f;
+  --light-color: #000;
+  --gray-color: #252525;
+}
+
+:root:has(.mode:checked) body {
+  background-color: #202020;
+}
+
+
+body:not(body:has(:target)):has(.mode:checked) .nav-item a[href="#home"],
+body:has(#home:target):has(.mode:checked) .nav-item a[href="#home"],
+body:has(#chefs:target):has(.mode:checked) .nav-item a[href="#chefs"],
+body:has(#gallery:target):has(.mode:checked) .nav-item a[href="#gallery"],
+body:has(#contacts:target):has(.mode:checked) .nav-item a[href="#contacts"] {
+  color: var(---tertiary-color);
+}
+
+body:has(.mode:checked) nav .nav-links a:hover {
+  color: #fff;
+}
+
+body:has(.mode:checked) .header-content p {
+  color: var(--color-tertiary);
+}
+
+:root:has(.mode:checked) .chefs-cards .card picture:before {
+  background-image: url("../img/team-shape-dark.svg");
+}
+
+body:has(.mode:checked) .contact .details > div h3 {
+  color: #adadad;
+}
